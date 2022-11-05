@@ -1,0 +1,69 @@
+﻿<Window x:Class="Женская_сборная_по_баскетболу.Windows.AddAndEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Женская_сборная_по_баскетболу.Windows"
+        mc:Ignorable="d"
+        Title="AddAndEditWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="FioPlayer" Text="Фамилия Имя Отчество" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock x:Name="DatePlayer" Text="Дата рождения" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock x:Name="Post" Text="Разряд" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock x:Name="GameNumber" Text="Игровой номер" Grid.Column="0" Grid.Row="3"/>
+
+            <TextBox x:Name="fioPl" Grid.Column="1" Grid.Row="0" Text="{Binding FCs}"/>
+            <TextBox x:Name="DatePl" Grid.Column="1" Grid.Row="1" Text="{Binding BirthDate}"/>
+            <TextBox x:Name="PostPl" Grid.Column="1" Grid.Row="2" Text="{Binding Post}"/>
+            <TextBox x:Name="GameNumberPl" Grid.Column="1" Grid.Row="3" Text="{Binding GameNumber}"/>
+
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="RolePlayer" Text="Роль" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock x:Name="HeightPlayer" Text="Рост" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock x:Name="WeightPlayer" Text="Вес" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock x:Name="ClubName" Text="Клуб" Grid.Column="0" Grid.Row="3"/>
+
+            <TextBox x:Name="RolePl" Grid.Column="1" Grid.Row="0" Text="{Binding Role}"/>
+            <TextBox x:Name="HeightPl" Grid.Column="1" Grid.Row="1" Text="{Binding Height}"/>
+            <TextBox x:Name="WeightPl" Grid.Column="1" Grid.Row="2" Text="{Binding Weight}"/>
+            <ComboBox x:Name="ClubBox" Grid.Column="1" Grid.Row="3" SelectedItem="{Binding Club}" DisplayMemberPath="Name" />
+            
+
+        </Grid>
+        <Button x:Name="BtnSave" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Сохранить" Grid.ColumnSpan="2" Background="#708090" Click="BtnSave_Click"></Button>
+    </Grid>
+</Window>
